@@ -1,11 +1,11 @@
 public class Hotel {
-    Player owner;
+    Player1 owner;
 
-    public Player getOwner() {
+    public Player1 getOwner() {
         return owner;
     }
 
-    public void setOwner(Player owner) {
+    public void setOwner(Player1 owner) {
         this.owner = owner;
     }
 }

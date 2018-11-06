@@ -43,7 +43,7 @@ public class Game {
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Snake Ladder Game");
+        System.out.println("Welcome to Snake Ladder Game1");
         System.out.println("Please enter the no. of cells of Board");
         Scanner in = new Scanner(System.in);
         int cells = in.nextInt();
@@ -63,15 +63,15 @@ public class Game {
         do {
             for (int i=0;i<player;i++) {
                 Player player1 = playerList.get(i);
-                System.out.println("Player: "+player1.getName()+"--------->");
+                System.out.println("Player1: "+player1.getName()+"--------->");
                 System.out.println("Press enter to throw dice");
                 in.nextLine();
                 int dice = generateRandomNumber(rand);
                 System.out.println("Dice number= "+dice);
                 int newCell = movePlayer(player1, dice, game);
                 if (newCell == cells -1) {
-                    System.out.println("Player "+player1.getName()+" wins");
-                    System.out.println("Game Over");
+                    System.out.println("Player1 "+player1.getName()+" wins");
+                    System.out.println("Game1 Over");
                     gameFlag = false;
                     break;
                 }

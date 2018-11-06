@@ -1,10 +1,11 @@
-package Tree;
+package tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTree {
     Node root;
+
 
     public BinaryTree() {
         this.root = null;

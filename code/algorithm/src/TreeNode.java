@@ -1,13 +1,12 @@
-package tree;
-
-public class Node {
+public class TreeNode {
     int data;
-    Node left;
-    Node right;
+    TreeNode left;
+    TreeNode right;
 
-    public Node(int data) {
+    public TreeNode(int data) {
         this.data = data;
         this.left = null;
         this.right = null;
     }
+
 }

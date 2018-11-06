@@ -12,10 +12,10 @@ TODO :
 public class BusinessGame {
     int numberOfPlayers;
     List<String> board;
-    List<Player> playerList;
+    List<Player1> playerList;
     Map<Integer, Hotel> hotelMap;
 
-    public BusinessGame(int numberOfPlayers, List<Player> playerList) {
+    public BusinessGame(int numberOfPlayers, List<Player1> playerList) {
         this.numberOfPlayers = numberOfPlayers;
         this.board = createBoard();
         this.playerList = playerList;
@@ -42,7 +42,7 @@ public class BusinessGame {
         return board;
     }
 
-    private int playerBalance(Player p) {
+    private int playerBalance(Player1 p) {
         int net = p.getAmount();
         for (Hotel h : p.getHotelList()) {
             net = net + 200;
@@ -51,7 +51,7 @@ public class BusinessGame {
     }
 
     private void calculateBalance() {
-        for (Player p : playerList) {
+        for (Player1 p : playerList) {
             int net = p.getAmount();
             for (Hotel h : p.getHotelList()) {
                 net = net + 200;
@@ -62,8 +62,8 @@ public class BusinessGame {
 
     public void calculateFinalBalance() {
         int max =0;
-        Player winner = null;
-        for (Player p : playerList) {
+        Player1 winner = null;
+        for (Player1 p : playerList) {
             int net = p.getAmount();
             for (Hotel h : p.getHotelList()) {
                 net = net + 200;
@@ -86,9 +86,9 @@ public class BusinessGame {
         do {
             count++;
             for (int i=0;i<playerList.size();i++) {
-                Player player = playerList.get(i);
+                Player1 player = playerList.get(i);
                 if (player.isFlag()) {
-                    System.out.println("Player: " + player.getName() + "--------->");
+                    System.out.println("Player1: " + player.getName() + "--------->");
                     System.out.println("Press enter to throw dice");
                     in.nextLine();
                     int dice = generateRandomNumber(2, 12);
@@ -106,7 +106,7 @@ public class BusinessGame {
         return randomNum;
     }
 
-    private void movePlayer(Player player, int dice) {
+    private void movePlayer(Player1 player, int dice) {
         int currentPosition = player.getPosition();
         int boardSize = board.size();
         int newPosition = (currentPosition + dice) % boardSize;
@@ -123,7 +123,7 @@ public class BusinessGame {
                     player.setAmount(newAmount);
                 } else {
                     player.setFlag(false);
-                    System.out.println("No money. Player " + player.getName() + " lost");
+                    System.out.println("No money. Player1 " + player.getName() + " lost");
                 }
             }
             else
@@ -142,7 +142,7 @@ public class BusinessGame {
             } else if (hotelMap.get(newPosition).getOwner() != null) {
                 System.out.println("Oops you are at someone else property. Play rent of 50");
                 int newAmount = player.getAmount() - 50;
-                Player owner = hotelMap.get(newPosition).getOwner();
+                Player1 owner = hotelMap.get(newPosition).getOwner();
                 int ownerBal = owner.getAmount();
                 owner.setAmount(ownerBal+50);
                 if (newAmount<0) {
@@ -154,7 +154,7 @@ public class BusinessGame {
                         player.setAmount(newAmount);
                     } else {
                         player.setFlag(false);
-                        System.out.println("No money. Player " + player.getName() + " lost");
+                        System.out.println("No money. Player1 " + player.getName() + " lost");
                     }
                 }
                 else

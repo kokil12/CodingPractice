@@ -1,14 +1,14 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class Player {
+public class Player1 {
     String name;
     List<Hotel> hotelList;
     int position;
     int amount;
     boolean flag;
 
-    public Player(String name) {
+    public Player1(String name) {
 
         this.name = name;
         this.hotelList = new LinkedList<>();
